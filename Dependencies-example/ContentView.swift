@@ -8,14 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var token = "loading"
+
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text("Api token value")
+            Text(token)
+            Text("---")
+            Text("Main actor calculated size")
+            Text(Dependencies.size().debugDescription)
+            Text("---")
+            Button {
+                Task {
+                    try await Dependencies.track("btn_tap")
+                }
+            } label: {
+                Text("Track button tap")
+            }
+
         }
-        .padding()
+        .task {
+            token = Dependencies.apiToken()
+        }
     }
 }
 

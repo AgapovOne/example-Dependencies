@@ -12,19 +12,14 @@
 		23495EBB2BB5EDB400B63926 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23495EBA2BB5EDB400B63926 /* Assets.xcassets */; };
 		23495EBE2BB5EDB400B63926 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23495EBD2BB5EDB400B63926 /* Preview Assets.xcassets */; };
 		23495EC82BB5EDB400B63926 /* Dependencies_exampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23495EC72BB5EDB400B63926 /* Dependencies_exampleTests.swift */; };
-		23495ED22BB5EDB400B63926 /* Dependencies_exampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23495ED12BB5EDB400B63926 /* Dependencies_exampleUITests.swift */; };
-		23495ED42BB5EDB400B63926 /* Dependencies_exampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23495ED32BB5EDB400B63926 /* Dependencies_exampleUITestsLaunchTests.swift */; };
+		23495EE12BB5EDC300B63926 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23495EE02BB5EDC200B63926 /* Dependencies.swift */; };
+		23495EE42BB5EEE700B63926 /* ConcurrencyExtras in Frameworks */ = {isa = PBXBuildFile; productRef = 23495EE32BB5EEE700B63926 /* ConcurrencyExtras */; };
+		23495EE72BB5EF6400B63926 /* XCTestDynamicOverlay in Frameworks */ = {isa = PBXBuildFile; productRef = 23495EE62BB5EF6400B63926 /* XCTestDynamicOverlay */; };
+		23497C132BB5F1C000B63926 /* EventTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23497C122BB5F1C000B63926 /* EventTracker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		23495EC42BB5EDB400B63926 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 23495EAB2BB5EDB300B63926 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 23495EB22BB5EDB300B63926;
-			remoteInfo = "Dependencies-example";
-		};
-		23495ECE2BB5EDB400B63926 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 23495EAB2BB5EDB300B63926 /* Project object */;
 			proxyType = 1;
@@ -41,9 +36,8 @@
 		23495EBD2BB5EDB400B63926 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		23495EC32BB5EDB400B63926 /* Dependencies-exampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dependencies-exampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		23495EC72BB5EDB400B63926 /* Dependencies_exampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies_exampleTests.swift; sourceTree = "<group>"; };
-		23495ECD2BB5EDB400B63926 /* Dependencies-exampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dependencies-exampleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		23495ED12BB5EDB400B63926 /* Dependencies_exampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies_exampleUITests.swift; sourceTree = "<group>"; };
-		23495ED32BB5EDB400B63926 /* Dependencies_exampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies_exampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		23495EE02BB5EDC200B63926 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
+		23497C122BB5F1C000B63926 /* EventTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTracker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,17 +45,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23495EE72BB5EF6400B63926 /* XCTestDynamicOverlay in Frameworks */,
+				23495EE42BB5EEE700B63926 /* ConcurrencyExtras in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		23495EC02BB5EDB400B63926 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		23495ECA2BB5EDB400B63926 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -76,8 +65,8 @@
 			children = (
 				23495EB52BB5EDB300B63926 /* Dependencies-example */,
 				23495EC62BB5EDB400B63926 /* Dependencies-exampleTests */,
-				23495ED02BB5EDB400B63926 /* Dependencies-exampleUITests */,
 				23495EB42BB5EDB300B63926 /* Products */,
+				23497C142BB5F49800B63926 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,7 +75,6 @@
 			children = (
 				23495EB32BB5EDB300B63926 /* Dependencies-example.app */,
 				23495EC32BB5EDB400B63926 /* Dependencies-exampleTests.xctest */,
-				23495ECD2BB5EDB400B63926 /* Dependencies-exampleUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,6 +84,8 @@
 			children = (
 				23495EB62BB5EDB300B63926 /* Dependencies_exampleApp.swift */,
 				23495EB82BB5EDB300B63926 /* ContentView.swift */,
+				23495EE02BB5EDC200B63926 /* Dependencies.swift */,
+				23497C122BB5F1C000B63926 /* EventTracker.swift */,
 				23495EBA2BB5EDB400B63926 /* Assets.xcassets */,
 				23495EBC2BB5EDB400B63926 /* Preview Content */,
 			);
@@ -118,13 +108,11 @@
 			path = "Dependencies-exampleTests";
 			sourceTree = "<group>";
 		};
-		23495ED02BB5EDB400B63926 /* Dependencies-exampleUITests */ = {
+		23497C142BB5F49800B63926 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				23495ED12BB5EDB400B63926 /* Dependencies_exampleUITests.swift */,
-				23495ED32BB5EDB400B63926 /* Dependencies_exampleUITestsLaunchTests.swift */,
 			);
-			path = "Dependencies-exampleUITests";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +131,10 @@
 			dependencies = (
 			);
 			name = "Dependencies-example";
+			packageProductDependencies = (
+				23495EE32BB5EEE700B63926 /* ConcurrencyExtras */,
+				23495EE62BB5EF6400B63926 /* XCTestDynamicOverlay */,
+			);
 			productName = "Dependencies-example";
 			productReference = 23495EB32BB5EDB300B63926 /* Dependencies-example.app */;
 			productType = "com.apple.product-type.application";
@@ -165,24 +157,6 @@
 			productReference = 23495EC32BB5EDB400B63926 /* Dependencies-exampleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		23495ECC2BB5EDB400B63926 /* Dependencies-exampleUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 23495EDD2BB5EDB400B63926 /* Build configuration list for PBXNativeTarget "Dependencies-exampleUITests" */;
-			buildPhases = (
-				23495EC92BB5EDB400B63926 /* Sources */,
-				23495ECA2BB5EDB400B63926 /* Frameworks */,
-				23495ECB2BB5EDB400B63926 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				23495ECF2BB5EDB400B63926 /* PBXTargetDependency */,
-			);
-			name = "Dependencies-exampleUITests";
-			productName = "Dependencies-exampleUITests";
-			productReference = 23495ECD2BB5EDB400B63926 /* Dependencies-exampleUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -200,10 +174,6 @@
 						CreatedOnToolsVersion = 15.3;
 						TestTargetID = 23495EB22BB5EDB300B63926;
 					};
-					23495ECC2BB5EDB400B63926 = {
-						CreatedOnToolsVersion = 15.3;
-						TestTargetID = 23495EB22BB5EDB300B63926;
-					};
 				};
 			};
 			buildConfigurationList = 23495EAE2BB5EDB300B63926 /* Build configuration list for PBXProject "Dependencies-example" */;
@@ -215,13 +185,16 @@
 				Base,
 			);
 			mainGroup = 23495EAA2BB5EDB300B63926;
+			packageReferences = (
+				23495EE22BB5EEE700B63926 /* XCRemoteSwiftPackageReference "swift-concurrency-extras" */,
+				23495EE52BB5EF6400B63926 /* XCRemoteSwiftPackageReference "xctest-dynamic-overlay" */,
+			);
 			productRefGroup = 23495EB42BB5EDB300B63926 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				23495EB22BB5EDB300B63926 /* Dependencies-example */,
 				23495EC22BB5EDB400B63926 /* Dependencies-exampleTests */,
-				23495ECC2BB5EDB400B63926 /* Dependencies-exampleUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -243,13 +216,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		23495ECB2BB5EDB400B63926 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -257,8 +223,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23495EE12BB5EDC300B63926 /* Dependencies.swift in Sources */,
 				23495EB92BB5EDB300B63926 /* ContentView.swift in Sources */,
 				23495EB72BB5EDB300B63926 /* Dependencies_exampleApp.swift in Sources */,
+				23497C132BB5F1C000B63926 /* EventTracker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,15 +238,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		23495EC92BB5EDB400B63926 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				23495ED42BB5EDB400B63926 /* Dependencies_exampleUITestsLaunchTests.swift in Sources */,
-				23495ED22BB5EDB400B63926 /* Dependencies_exampleUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -286,11 +245,6 @@
 			isa = PBXTargetDependency;
 			target = 23495EB22BB5EDB300B63926 /* Dependencies-example */;
 			targetProxy = 23495EC42BB5EDB400B63926 /* PBXContainerItemProxy */;
-		};
-		23495ECF2BB5EDB400B63926 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 23495EB22BB5EDB300B63926 /* Dependencies-example */;
-			targetProxy = 23495ECE2BB5EDB400B63926 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -355,6 +309,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
 			};
 			name = Debug;
 		};
@@ -410,6 +365,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_STRICT_CONCURRENCY = complete;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -512,42 +468,6 @@
 			};
 			name = Release;
 		};
-		23495EDE2BB5EDB400B63926 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = M8VJPZ5S46;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.agpone.Dependencies-exampleUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Dependencies-example";
-			};
-			name = Debug;
-		};
-		23495EDF2BB5EDB400B63926 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = M8VJPZ5S46;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.agpone.Dependencies-exampleUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Dependencies-example";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -578,16 +498,39 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		23495EDD2BB5EDB400B63926 /* Build configuration list for PBXNativeTarget "Dependencies-exampleUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				23495EDE2BB5EDB400B63926 /* Debug */,
-				23495EDF2BB5EDB400B63926 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		23495EE22BB5EEE700B63926 /* XCRemoteSwiftPackageReference "swift-concurrency-extras" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-concurrency-extras.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
+			};
+		};
+		23495EE52BB5EF6400B63926 /* XCRemoteSwiftPackageReference "xctest-dynamic-overlay" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/xctest-dynamic-overlay.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		23495EE32BB5EEE700B63926 /* ConcurrencyExtras */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 23495EE22BB5EEE700B63926 /* XCRemoteSwiftPackageReference "swift-concurrency-extras" */;
+			productName = ConcurrencyExtras;
+		};
+		23495EE62BB5EF6400B63926 /* XCTestDynamicOverlay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 23495EE52BB5EF6400B63926 /* XCRemoteSwiftPackageReference "xctest-dynamic-overlay" */;
+			productName = XCTestDynamicOverlay;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 23495EAB2BB5EDB300B63926 /* Project object */;
 }

@@ -6,12 +6,17 @@
 //
 
 import SwiftUI
+import XCTestDynamicOverlay
 
 @main
 struct Dependencies_exampleApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if _XCTIsTesting {
+                EmptyView()
+            } else {
+                ContentView()
+            }
         }
     }
 }
