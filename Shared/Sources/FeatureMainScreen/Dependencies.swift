@@ -5,14 +5,26 @@
 //  Created by Alex Agapov on 28.03.2024.
 //
 
-import Foundation
 import ConcurrencyExtras
+import Foundation
+import SharedDependencies
 import UIKit
+import XCTestDynamicOverlay
 
 struct ModuleDependencies: Sendable {
     var apiToken: @Sendable () -> String
     var size: @Sendable @MainActor () -> CGSize
     var track: @Sendable (String) async throws -> Void
+
+    var external: ModuleExternalDependencies!
+}
+
+public struct ModuleExternalDependencies: Sendable {
+    let route: @Sendable (Route) -> Void
+
+    public init(route: @escaping @Sendable (Route) -> Void) {
+        self.route = route
+    }
 }
 
 let Dependencies = LockIsolated(
@@ -22,6 +34,12 @@ let Dependencies = LockIsolated(
         failing: .failing
     )
 )
+
+public func SetupMainScreenDependencies(_ external: ModuleExternalDependencies) {
+    Dependencies.withValue {
+        $0.external = external
+    }
+}
 
 extension ModuleDependencies {
     static var live: Self {
@@ -34,7 +52,7 @@ extension ModuleDependencies {
 
     static var preview: Self {
         .init(
-            apiToken: { "REAL" },
+            apiToken: { "PREVIEW" },
             size: { .init(width: 999, height: 999) },
             track: { print("debug \($0)") }
         )
@@ -48,32 +66,3 @@ extension ModuleDependencies {
         )
     }
 }
-
-// MARK: - Helper defined in share module
-
-import XCTestDynamicOverlay
-
-var isPreview: () -> Bool {
-    { ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1" }
-}
-
-public func dependencies<Dependencies>(
-    live: @autoclosure () -> Dependencies,
-    preview: @autoclosure () -> Dependencies?,
-    failing: @autoclosure () -> Dependencies?
-) -> Dependencies {
-    if _XCTIsTesting {
-        if let failingValue = failing() {
-            return failingValue
-        }
-    }
-
-    if isPreview() {
-        if let previewValue = preview() {
-            return previewValue
-        }
-    }
-
-    return live()
-}
-

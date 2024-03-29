@@ -10,7 +10,7 @@ import Foundation
 enum EventTracker {
     static func track(_ event: String) async throws {
         print("event \(event) is being processed with token \(Dependencies.apiToken())")
-        try await Task.sleep(for: .seconds(1))
+        try await Task.sleep(nanoseconds: 1_000_000_000)
         print("tracked \(event)")
     }
 }

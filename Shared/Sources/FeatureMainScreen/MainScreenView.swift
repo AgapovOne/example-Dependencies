@@ -1,16 +1,11 @@
-//
-//  ContentView.swift
-//  Dependencies-example
-//
-//  Created by Alex Agapov on 28.03.2024.
-//
-
 import SwiftUI
 
-struct ContentView: View {
+public struct MainScreenView: View {
     @State private var token = "loading"
 
-    var body: some View {
+    public init() {}
+
+    public var body: some View {
         VStack {
             Text("Api token value")
             Text(token)
@@ -25,6 +20,13 @@ struct ContentView: View {
             } label: {
                 Text("Track button tap")
             }
+            Text("---")
+            Button {
+                Dependencies.external.route(.settings)
+            } label: {
+                Text("Open settings")
+            }
+            .buttonStyle(BorderedButtonStyle())
 
         }
         .task {
@@ -34,5 +36,6 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    SetupMainScreenDependencies(.init(route: { print($0) }))
+    return MainScreenView()
 }
