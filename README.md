@@ -1,5 +1,7 @@
 # Dependencies article example
 
+How we do Dependency Injection in [Aviasales](https://avisales.com)
+
 ## What to try
 
 🖼️ Use Preview and see `ModuleDependencies.preview` in action
